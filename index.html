@@ -16,6 +16,16 @@
         /* Global body font and background from mryogipremium theme */
         body {
             font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+        }
+
+        /* Text gradient for headings */
+        .text-gradient {
+            background: linear-gradient(to right, #7B66FF, #A020F0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent; /* Fallback for non-webkit browsers */
         }
 
         /* Custom styles for the Plans Section, adapted to Tailwind where possible */
@@ -39,17 +49,22 @@
 
         .plan-card {
             background-color: #ffffff; /* White background for cards */
-            border: 1px solid #e0e0e0; /* Lighter border */
+            border: 1px solid #e0e0e0;
             border-radius: 10px;
-            padding: 20px;
+            padding: 16px; /* Default smaller padding for mobile */
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
-            transition: transform 0.2s, box-shadow 0.2s; /* Added box-shadow to transition */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        @media (min-width: 768px) { /* Medium screens and up */
+            .plan-card {
+                padding: 24px; /* Larger padding for tablets and desktops */
+            }
         }
 
         .plan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+            transform: translateY(-8px) scale(1.02); /* More pronounced lift and slight scale */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
         }
 
         .plan-card h2 {
@@ -76,12 +91,13 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.2s;
-            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Added transitions */
         }
 
         .plan-card a:hover {
             background-color: #6A5ACD; /* Darker purple on hover */
+            transform: translateY(-2px) scale(1.05); /* Lift and scale on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .about-link-section {
@@ -116,8 +132,8 @@
         }
 
         .gradient-button:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 6px 20px rgba(123, 102, 255, 0.6);
+            transform: translateY(-4px) scale(1.05); /* More pronounced lift and scale */
+            box-shadow: 0 8px 25px rgba(123, 102, 255, 0.6); /* Stronger shadow */
             background: linear-gradient(to right, #6A5ACD, #8A2BE2); /* Darker gradient on hover */
         }
 
@@ -127,14 +143,19 @@
             border: 1px solid #e0e0e0;
             border-radius: 10px;
             margin-bottom: 20px;
-            padding: 20px;
+            padding: 16px; /* Default smaller padding for mobile */
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .netflix-plan-card {
+                padding: 24px;
+            }
         }
 
         .netflix-plan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
 
         .netflix-plan-card h2 {
@@ -172,12 +193,13 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: background-color 0.2s;
-            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
         .netflix-buy-btn:hover {
             background-color: #B20710; /* Darker red on hover */
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* Amazon Prime Plan Specific Styles - adapted to mryogipremium theme */
@@ -186,14 +208,19 @@
             border: 1px solid #e0e0e0;
             border-radius: 10px;
             margin-bottom: 20px;
-            padding: 20px;
+            padding: 16px; /* Default smaller padding for mobile */
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .amazon-prime-plan-card {
+                padding: 24px;
+            }
         }
 
         .amazon-prime-plan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
 
         .amazon-prime-plan-card h2 {
@@ -231,12 +258,13 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: background-color 0.2s;
-            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
         .amazon-prime-buy-btn:hover {
             background-color: #008CC9; /* Darker blue on hover */
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* JioHotstar Plan Specific Styles - adapted to mryogipremium theme */
@@ -245,14 +273,19 @@
             border: 1px solid #e0e0e0;
             border-radius: 10px;
             margin-bottom: 20px;
-            padding: 20px;
+            padding: 16px; /* Default smaller padding for mobile */
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .jiohotstar-plan-card {
+                padding: 24px;
+            }
         }
 
         .jiohotstar-plan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
 
         .jiohotstar-plan-card h2 {
@@ -298,8 +331,7 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: background-color 0.2s;
-            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         /* Styling for the nested buttons in 4K Premium */
         .jiohotstar-buy-btn.nested {
@@ -311,6 +343,8 @@
 
         .jiohotstar-buy-btn:hover {
             background-color: #155BB2; /* Darker blue on hover */
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* ZEE5 Plan Specific Styles - adapted to mryogipremium theme */
@@ -319,15 +353,20 @@
             border: 1px solid #e0e0e0;
             border-radius: 10px;
             margin-bottom: 20px;
-            padding: 20px;
+            padding: 16px; /* Default smaller padding for mobile */
             text-align: center;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .zee5-plan-card {
+                padding: 24px;
+            }
         }
 
         .zee5-plan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
 
         .zee5-plan-card h2 {
@@ -361,12 +400,13 @@
             font-weight: 600;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.2s;
-            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
         .zee5-buy-btn:hover {
             background-color: #7BB237; /* Darker green on hover */
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* SonyLIV Plan Specific Styles - adapted to mryogipremium theme */
@@ -374,14 +414,19 @@
             background-color: #ffffff; /* White background */
             border: 1px solid #e0e0e0;
             border-radius: 10px;
-            padding: 20px; /* Reduced padding for consistency with other cards */
+            padding: 16px; /* Default smaller padding for mobile */
             text-align: center;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .sonyliv-plan-card {
+                padding: 24px;
+            }
         }
         .sonyliv-plan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
         .sonyliv-plan-card h2 {
             color: #FF8C00; /* SonyLIV Orange (a bit brighter than original) */
@@ -411,11 +456,12 @@
             font-weight: 600;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.2s;
-            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .sonyliv-buy-btn:hover {
             background-color: #FF7F00; /* Darker orange on hover */
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* YouTube Premium Plan Specific Styles - adapted to mryogipremium theme */
@@ -423,14 +469,19 @@
             background-color: #ffffff; /* White background */
             border: 1px solid #e0e0e0;
             border-radius: 10px;
-            padding: 20px;
+            padding: 16px; /* Default smaller padding for mobile */
             text-align: center;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .youtube-premium-plan-card {
+                padding: 24px;
+            }
         }
         .youtube-premium-plan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
         .youtube-premium-plan-card h2 {
             color: #FF0000; /* YouTube Red */
@@ -460,11 +511,12 @@
             font-weight: 600;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.2s;
-            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .youtube-premium-buy-btn:hover {
             background-color: #CC0000; /* Darker red on hover */
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* AI & Software Tools Plan Specific Styles - adapted to mryogipremium theme */
@@ -472,9 +524,19 @@
             background-color: #ffffff; /* White background */
             border: 1px solid #e0e0e0;
             border-radius: 10px;
-            padding: 20px;
+            padding: 16px; /* Default smaller padding for mobile */
             margin-bottom: 20px; /* Spacing between sections */
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .ai-tools-section-card {
+                padding: 24px;
+            }
+        }
+        .ai-tools-section-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
         .ai-tools-section-card h2 {
             color: #7B66FF; /* Primary purple for section titles */
@@ -517,11 +579,12 @@
             text-align: center;
             font-weight: 600;
             margin-top: 20px;
-            transition: background-color 0.2s;
-            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .ai-tools-buy-btn:hover {
             background-color: #6A5ACD; /* Darker purple on hover */
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* Spotify Premium Plan Specific Styles - adapted to mryogipremium theme */
@@ -529,14 +592,19 @@
             background-color: #ffffff; /* White background */
             border: 1px solid #e0e0e0;
             border-radius: 10px;
-            padding: 20px;
+            padding: 16px; /* Default smaller padding for mobile */
             text-align: center;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .spotify-plan-card {
+                padding: 24px;
+            }
         }
         .spotify-plan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
         .spotify-plan-card h2 {
             color: #1DB954; /* Spotify Green */
@@ -566,11 +634,12 @@
             font-weight: 600;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.2s;
-            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .spotify-buy-btn:hover {
             background-color: #1ED760; /* Darker green on hover */
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* Canva Pro EDU Plan Specific Styles - adapted to mryogipremium theme */
@@ -578,14 +647,19 @@
             background-color: #ffffff; /* White background */
             border: 1px solid #e0e0e0;
             border-radius: 10px;
-            padding: 20px;
+            padding: 16px; /* Default smaller padding for mobile */
             text-align: center;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .canva-pro-edu-plan-card {
+                padding: 24px;
+            }
         }
         .canva-pro-edu-plan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
         .canva-pro-edu-plan-card h2 {
             color: #6C3F9A; /* Deep purple for Canva */
@@ -615,11 +689,12 @@
             font-weight: 600;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.2s;
-            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .canva-pro-edu-buy-btn:hover {
             background-color: #5A3681; /* Darker purple on hover */
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* About Us Page Specific Styles - adapted to mryogipremium theme */
@@ -711,17 +786,22 @@
             background-color: #ffffff; /* White background for cards */
             border: 1px solid #e0e0e0;
             border-radius: 10px;
-            padding: 20px;
+            padding: 16px; /* Default smaller padding for mobile */
             text-align: center;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             display: flex; /* Use flexbox for internal layout */
             flex-direction: column; /* Stack content vertically */
             justify-content: space-between; /* Push button to bottom */
         }
+        @media (min-width: 768px) {
+            .combo-plan-card {
+                padding: 24px;
+            }
+        }
         .combo-plan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
         .combo-plan-card h2 {
             color: #7B66FF; /* Primary purple for combo titles */
@@ -763,11 +843,12 @@
             font-weight: 600;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.2s;
-            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .combo-buy-btn:hover {
             background-color: #6A5ACD; /* Darker purple on hover */
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* Contact Page Specific Styles - adapted to mryogipremium theme */
@@ -821,7 +902,7 @@
             font-family: 'Poppins', sans-serif;
         }
         .contact-form-box button:hover {
-            transform: translateY(-2px);
+            transform: translateY(-2px) scale(1.05);
             box-shadow: 0 4px 10px rgba(123, 102, 255, 0.4);
             background: linear-gradient(to right, #6A5ACD, #8A2BE2);
         }
@@ -863,11 +944,12 @@
             text-decoration: none;
             font-weight: bold;
             text-align: center;
-            transition: background-color 0.2s;
-            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .payment-whatsapp-btn:hover {
             background-color: #1DA851; /* Darker green on hover */
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         .payment-upi-copy {
             background: #f0f0f0; /* Lighter gray background */
@@ -887,11 +969,12 @@
             padding: 6px 10px;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.2s;
-            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .payment-upi-copy button:hover {
             background: #6A5ACD; /* Darker purple on hover */
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         .payment-qr-image {
             display: block;
@@ -933,7 +1016,7 @@
         }
 
         .modal-content h3 {
-            color: #7B66FF;
+            /* Now uses text-gradient class */
             font-size: 22px;
             margin-bottom: 15px;
         }
@@ -951,11 +1034,13 @@
             border-radius: 5px;
             cursor: pointer;
             font-weight: 600;
-            transition: background-color 0.2s;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
         .modal-button:hover {
             background: linear-gradient(to right, #6A5ACD, #8A2BE2);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
     </style>
@@ -975,8 +1060,8 @@
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex">
                 <ul class="flex space-x-6">
-                    <li><a href="#" class="text-gray-700 hover:text-[#7B66FF] font-semibold transition duration-300" id="homeNavLink">Home</a></li>
-                    <li><a href="#" class="text-gray-700 hover:text-[#7B66FF] font-semibold transition duration-300" id="plansNavLink">Plans</a></li>
+                    <li><a href="#homePage" class="text-gray-700 hover:text-[#7B66FF] font-semibold transition duration-300">Home</a></li>
+                    <li><a href="#plansPage" class="text-gray-700 hover:text-[#7B66FF] font-semibold transition duration-300">Plans</a></li>
                     <li><a href="#" class="text-gray-700 hover:text-[#7B66FF] font-semibold transition duration-300">Pricing</a></li>
                     <li><a href="https://wa.me/8618388937?text=Hi%20yogi%20i%20need%20some%20assistance%20in%20ur%20website" target="_blank" class="text-gray-700 hover:text-[#7B66FF] font-semibold transition duration-300">Support</a></li>
                 </ul>
@@ -986,8 +1071,8 @@
         <!-- Mobile Navigation (hidden by default) -->
         <div id="mobileMenu" class="hidden md:hidden bg-white py-4 mt-4 rounded-lg shadow-lg">
             <ul class="flex flex-col items-center space-y-4">
-                <li><a href="#" class="text-gray-700 hover:text-[#7B66FF] font-semibold transition duration-300 py-2 block" id="homeNavLinkMobile">Home</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-[#7B66FF] font-semibold transition duration-300 py-2 block" id="plansNavLinkMobile">Plans</a></li>
+                <li><a href="#homePage" class="text-gray-700 hover:text-[#7B66FF] font-semibold transition duration-300 py-2 block">Home</a></li>
+                <li><a href="#plansPage" class="text-gray-700 hover:text-[#7B66FF] font-semibold transition duration-300 py-2 block">Plans</a></li>
                 <li><a href="#" class="text-gray-700 hover:text-[#7B66FF] font-semibold transition duration-300 py-2 block">Pricing</a></li>
                 <li><a href="https://wa.me/8618388937?text=Hi%20yogi%20i%20need%20some%20assistance%20in%20ur%20website" target="_blank" class="text-gray-700 hover:text-[#7B66FF] font-semibold transition duration-300 py-2 block">Support</a></li>
             </ul>
@@ -999,7 +1084,7 @@
 
         <!-- Home Page Section -->
         <section id="homePage" class="bg-white p-8 rounded-lg shadow-lg mb-8">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-6">Your Gateway to Affordable Premium Streaming!</h1>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-6 text-gradient">Your Gateway to Affordable Premium Streaming!</h1>
             <p class="text-lg text-center text-gray-600 mb-8 max-w-3xl mx-auto">
                 Get access to your favorite OTT platforms at unbeatable prices. Stream more, pay less!
             </p>
@@ -1039,70 +1124,70 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                     <div class="plan-card">
-                        <img src="https://placehold.co/100x100/E50914/FFFFFF/png?text=Netflix" alt="Netflix Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1920px-Netflix_2015_logo.svg.png" alt="Netflix Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>Netflix</h2>
                         <p>Ultra HD, Shared & Private Plans</p>
                         <a href="#" data-plan-type="netflix" class="plan-card-button">View Plans</a>
                     </div>
 
                     <div class="plan-card">
-                        <img src="https://placehold.co/100x100/00A8E1/FFFFFF/png?text=Prime" alt="Amazon Prime Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Prime_Video_Logo.svg/1280px-Prime_Video_Logo.svg.png" alt="Amazon Prime Video Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>Amazon Prime</h2>
                         <p>With Shopping, 4K Multi-Screen</p>
                         <a href="#" data-plan-type="amazonPrime" class="plan-card-button">View Plans</a>
                     </div>
 
                     <div class="plan-card">
-                        <img src="https://placehold.co/100x100/1A72F6/FFFFFF/png?text=Hotstar" alt="JioHotstar Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/JioHotstar_2025.png/1024px-JioHotstar_2025.png" alt="JioHotstar Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>JioHotstar</h2>
                         <p>1M to 12M | Shared & On Number</p>
                         <a href="#" data-plan-type="jioHotstar" class="plan-card-button">View Plans</a>
                     </div>
 
                     <div class="plan-card">
-                        <img src="https://placehold.co/100x100/000000/FFFFFF/png?text=ZEE5" alt="ZEE5 Logo" class="mx-auto mb-4 rounded-md w-[100px] h-[100px] object-contain">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/ZEE5_2025.png/1024px-ZEE5_2025.png" alt="ZEE5 Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>ZEE5</h2>
                         <p>Premium Plans for All Screens</p>
                         <a href="#" data-plan-type="zee5" class="plan-card-button">View Plans</a>
                     </div>
 
                     <div class="plan-card">
-                        <img src="https://placehold.co/100x100/FF8C00/FFFFFF/png?text=SonyLIV" alt="SonyLIV Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/SonyLIV_Logo.png/800px-SonyLIV_Logo.png" alt="SonyLIV Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>SonyLIV</h2>
                         <p>HD & 4K Plans | Up to 12 Months</p>
                         <a href="#" data-plan-type="sonyliv" class="plan-card-button">View Plans</a>
                     </div>
 
                     <div class="plan-card">
-                        <img src="https://placehold.co/100x100/FF0000/FFFFFF/png?text=YouTube" alt="YouTube Premium Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Premium_logo.svg/1280px-YouTube_Premium_logo.svg.png" alt="YouTube Premium Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>YouTube Premium</h2>
                         <p>1M to 12M Plans – Ad-Free</p>
                         <a href="#" data-plan-type="youtubePremium" class="plan-card-button">View Plans</a>
                     </div>
 
                     <div class="plan-card">
-                        <img src="https://placehold.co/100x100/1DB954/FFFFFF/png?text=Spotify" alt="Spotify Premium Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Spotify_logo_with_text.svg/1280px-Spotify_logo_with_text.svg.png" alt="Spotify Premium Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>Spotify Premium</h2>
                         <p>Ad-Free | 2-Month Validity</p>
                         <a href="#" data-plan-type="spotifyPremium" class="plan-card-button">View Plans</a>
                     </div>
 
                     <div class="plan-card">
-                        <img src="https://placehold.co/100x100/6C3F9A/FFFFFF/png?text=Canva" alt="Canva Pro Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Canva_Logo.png/800px-Canva_Logo.png" alt="Canva Pro Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>Canva Pro (EDU)</h2>
                         <p>1 Year Activate On Your Gmail</p>
                         <a href="#" data-plan-type="canvaProEdu" class="plan-card-button">View Plans</a>
                     </div>
 
                     <div class="plan-card">
-                        <img src="https://placehold.co/100x100/7B66FF/FFFFFF/png?text=Combo" alt="Combo Deals Icon" class="mx-auto mb-4 rounded-md">
+                        <img src="https://static.thenounproject.com/png/337189-200.png" alt="Combo Deals Icon" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>Combo Deals</h2>
                         <p>OTT + Music + More in Combo Packages</p>
                         <a href="#" data-plan-type="comboDeals" class="plan-card-button">View Combo Deals</a>
                     </div>
 
                     <div class="plan-card">
-                        <img src="https://placehold.co/100x100/000000/FFFFFF/png?text=AI+Tools" alt="AI & Software Tools Icon" class="mx-auto mb-4 rounded-md">
+                        <img src="https://static.thenounproject.com/png/137613-200.png" alt="AI & Software Tools Icon" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>AI & Software Tools</h2>
                         <p>All AI & Software Tools</p>
                         <a href="#" data-plan-type="aiSoftwareTools" class="plan-card-button">View Plans</a>
@@ -1112,7 +1197,7 @@
             </div>
 
             <div class="about-link-section">
-                <p><a href="#" id="aboutUsNavLink">Learn More About Us</a></p>
+                <p><a href="#aboutUsPage" id="aboutUsNavLink">Learn More About Us</a></p>
             </div>
 
             <div class="flex justify-center mt-8">
@@ -1315,7 +1400,7 @@
                         <p>HD Plan (1080p)</p>
                         <p>Stream on 1 Device Only</p>
                         <div class="jiohotstar-price">₹359</div>
-                        <a href="#" class="jiohotstar-buy-btn" data-plan="Hotstar 12M Shared" data-price="359">Buy Now</a>
+                    <a href="#" class="jiohotstar-buy-btn" data-plan="Hotstar 12M Shared" data-price="359">Buy Now</a>
                     </div>
 
                     <div class="jiohotstar-plan-card">
@@ -1357,7 +1442,7 @@
 
                     <!-- ZEE5 1M -->
                     <div class="zee5-plan-card">
-                        <img src="https://placehold.co/100x100/000000/FFFFFF/png?text=ZEE5" alt="ZEE5 Logo" class="mx-auto mb-4 rounded-md w-[100px] h-[100px] object-contain">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/ZEE5_2025.png/1024px-ZEE5_2025.png" alt="ZEE5 Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>1 Month – Shared</h2>
                         <p>HD Streaming • Fast Delivery</p>
                         <p>Access on 1 Device Only</p>
@@ -1367,7 +1452,7 @@
 
                     <!-- ZEE5 3M -->
                     <div class="zee5-plan-card">
-                        <img src="https://placehold.co/100x100/000000/FFFFFF/png?text=ZEE5" alt="ZEE5 Logo" class="mx-auto mb-4 rounded-md w-[100px] h-[100px] object-contain">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/ZEE5_2025.png/1024px-ZEE5_2025.png" alt="ZEE5 Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>3 Months – Shared</h2>
                         <p>Unlimited Content • 1080p Quality</p>
                         <p>Watch on Single Device</p>
@@ -1377,7 +1462,7 @@
 
                     <!-- ZEE5 6M -->
                     <div class="zee5-plan-card">
-                        <img src="https://placehold.co/100x100/000000/FFFFFF/png?text=ZEE5" alt="ZEE5 Logo" class="mx-auto mb-4 rounded-md w-[100px] h-[100px] object-contain">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/ZEE5_2025.png/1024px-ZEE5_2025.png" alt="ZEE5 Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>6 Months – Shared</h2>
                         <p>Full HD Access • Great Value</p>
                         <p>1 Device Access • Quick Setup</p>
@@ -1387,7 +1472,7 @@
 
                     <!-- ZEE5 12M -->
                     <div class="zee5-plan-card">
-                        <img src="https://placehold.co/100x100/000000/FFFFFF/png?text=ZEE5" alt="ZEE5 Logo" class="mx-auto mb-4 rounded-md w-[100px] h-[100px] object-contain">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/ZEE5_2025.png/1024px-ZEE5_2025.png" alt="ZEE5 Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>12 Months – Shared</h2>
                         <p>Annual Plan • HD Quality Streaming</p>
                         <p>Works on 1 Device</p>
@@ -1397,7 +1482,7 @@
 
                     <!-- ZEE5 12M Your Number -->
                     <div class="zee5-plan-card">
-                        <img src="https://placehold.co/100x100/000000/FFFFFF/png?text=ZEE5" alt="ZEE5 Logo" class="mx-auto mb-4 rounded-md w-[100px] h-[100px] object-contain">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/ZEE5_2025.png/1024px-ZEE5_2025.png" alt="ZEE5 Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>12 Months – On Your Number</h2>
                         <p>1080p Quality • Personal Activation</p>
                         <p>Use on Mobile, TV, Laptop • 1 Device</p>
@@ -1423,7 +1508,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                     <div class="sonyliv-plan-card">
-                        <img src="https://placehold.co/100x100/FF8C00/FFFFFF/png?text=SonyLIV" alt="SonyLIV Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/SonyLIV_Logo.png/800px-SonyLIV_Logo.png" alt="SonyLIV Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>SonyLIV 1 Month</h2>
                         <p>4k Premium Access • All Devices</p>
                         <div class="sonyliv-price">₹49</div>
@@ -1431,7 +1516,7 @@
                     </div>
 
                     <div class="sonyliv-plan-card">
-                        <img src="https://placehold.co/100x100/FF8C00/FFFFFF/png?text=SonyLIV" alt="SonyLIV Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/SonyLIV_Logo.png/800px-SonyLIV_Logo.png" alt="SonyLIV Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>SonyLIV 3 Months</h2>
                         <p>Premium 4K Streaming • Fast Delivery</p>
                         <div class="sonyliv-price">₹169</div>
@@ -1439,7 +1524,7 @@
                     </div>
 
                     <div class="sonyliv-plan-card">
-                        <img src="https://placehold.co/100x100/FF8C00/FFFFFF/png?text=SonyLIV" alt="SonyLIV Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/SonyLIV_Logo.png/800px-SonyLIV_Logo.png" alt="SonyLIV Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>SonyLIV 6 Months</h2>
                         <p>4k premium Watch Original Shows, Live TV & Sports</p>
                         <div class="sonyliv-price">₹259</div>
@@ -1447,7 +1532,7 @@
                     </div>
 
                     <div class="sonyliv-plan-card">
-                        <img src="https://placehold.co/100x100/FF8C00/FFFFFF/png?text=SonyLIV" alt="SonyLIV Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/SonyLIV_Logo.png/800px-SonyLIV_Logo.png" alt="SonyLIV Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>SonyLIV 12 Months</h2>
                         <p>1 Year Access • 4K Quality • Instant Activation</p>
                         <div class="sonyliv-price">₹299</div>
@@ -1455,7 +1540,7 @@
                     </div>
 
                     <div class="sonyliv-plan-card">
-                        <img src="https://placehold.co/100x100/FF8C00/FFFFFF/png?text=SonyLIV" alt="SonyLIV Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/SonyLIV_Logo.png/800px-SonyLIV_Logo.png" alt="SonyLIV Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>SonyLIV 12M – Your Number</h2>
                         <p>Activated on Your Number • 4K Quality</p>
                         <div class="sonyliv-price">₹499</div>
@@ -1480,7 +1565,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                     <div class="youtube-premium-plan-card">
-                        <img src="https://placehold.co/100x100/FF0000/FFFFFF/png?text=YouTube" alt="YouTube Premium Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Premium_logo.svg/1280px-YouTube_Premium_logo.svg.png" alt="YouTube Premium Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>1 Month Plan</h2>
                         <p>Ad-Free Music & Video • Mail Activation</p>
                         <p>unlimited Login • Fast Setup</p>
@@ -1489,7 +1574,7 @@
                     </div>
 
                     <div class="youtube-premium-plan-card">
-                        <img src="https://placehold.co/100x100/FF0000/FFFFFF/png?text=YouTube" alt="YouTube Premium Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Premium_logo.svg/1280px-YouTube_Premium_logo.svg.png" alt="YouTube Premium Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>2 Months Plan</h2>
                         <p>Watch Offline • Ad-Free • 1 Month Warranty</p>
                         <p>unlimited Login</p>
@@ -1498,7 +1583,7 @@
                     </div>
 
                     <div class="youtube-premium-plan-card">
-                        <img src="https://placehold.co/100x100/FF0000/FFFFFF/png?text=YouTube" alt="YouTube Premium Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Premium_logo.svg/1280px-YouTube_Premium_logo.svg.png" alt="YouTube Premium Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>3 Months Plan</h2>
                         <p>Unlimited Play • No Ads • HD Streaming</p>
                         <p>unlimited login</p>
@@ -1507,7 +1592,7 @@
                     </div>
 
                     <div class="youtube-premium-plan-card">
-                        <img src="https://placehold.co/100x100/FF0000/FFFFFF/png?text=YouTube" alt="YouTube Premium Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Premium_logo.svg/1280px-YouTube_Premium_logo.svg.png" alt="YouTube Premium Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>6 Months Plan</h2>
                         <p>Free Downloads • Seamless Playback</p>
                         <p>On Your Gmail • unlimited login</p>
@@ -1516,7 +1601,7 @@
                     </div>
 
                     <div class="youtube-premium-plan-card">
-                        <img src="https://placehold.co/100x100/FF0000/FFFFFF/png?text=YouTube" alt="YouTube Premium Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Premium_logo.svg/1280px-YouTube_Premium_logo.svg.png" alt="YouTube Premium Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>12 Months Plan</h2>
                         <p>Mail-Based Access • Watch on TV & Mobile</p>
                         <p>unlimited login • Full Year Warranty</p>
@@ -1525,7 +1610,7 @@
                     </div>
 
                     <div class="youtube-premium-plan-card">
-                        <img src="https://placehold.co/100x100/FF0000/FFFFFF/png?text=YouTube" alt="YouTube Premium Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Premium_logo.svg/1280px-YouTube_Premium_logo.svg.png" alt="YouTube Premium Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>Full Family Account – 1 Month</h2>
                         <p>5 Members • Gmail + Password Provided</p>
                         <p>Password Change Allowed</p>
@@ -1609,7 +1694,7 @@
                             <li>🔒 Private account</li>
                             <li>💳 Annual billing</li>
                             <li>📞 24/7 Adobe support</li>
-                            <li>🔄 1-Year Warranty</li>
+                            <li>� 1-Year Warranty</li>
                         </ul>
                         <div class="ai-tools-price">💰 Price: ₹3599</div>
                         <a href="#" class="ai-tools-buy-btn" data-plan="Adobe Creative Cloud" data-price="3599">Buy Now</a>
@@ -1688,7 +1773,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                     <div class="spotify-plan-card">
-                        <img src="https://placehold.co/100x100/1DB954/FFFFFF/png?text=Spotify" alt="Spotify Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Spotify_logo_with_text.svg/1280px-Spotify_logo_with_text.svg.png" alt="Spotify Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>2-Months Spotify Premium</h2>
                         <p>🎧 Unlimited Music Streaming – Ad Free!</p>
                         <p>🌍 Global Access – No Restrictions</p>
@@ -1717,7 +1802,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                     <div class="canva-pro-edu-plan-card">
-                        <img src="https://placehold.co/100x100/6C3F9A/FFFFFF/png?text=Canva" alt="Canva Pro EDU Logo" class="mx-auto mb-4 rounded-md">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Canva_Logo.png/800px-Canva_Logo.png" alt="Canva Pro EDU Logo" class="mx-auto mb-4 rounded-md h-[100px] object-contain">
                         <h2>1 Year Canva Pro (EDU)</h2>
                         <p>✅ Activated on Your Mail via EDU Invite</p>
                         <p>✅ Only Gmail Required</p>
@@ -1871,7 +1956,7 @@
 
     </main>
 
-    <footer class="bg-gray-800 text-white py-6 px-6 md:px-8 lg:px-12 mt-8 rounded-t-lg">
+    <footer class="bg-gray-900 text-white py-6 px-6 md:px-8 lg:px-12 mt-8 rounded-t-lg">
         <div class="container mx-auto text-center">
             <p>&copy; 2024 mryogipremium. All rights reserved.</p>
             <div class="flex justify-center space-x-4 mt-2">
@@ -1884,7 +1969,7 @@
     <!-- Custom Message Modal -->
     <div id="messageModal" class="modal">
         <div class="modal-content">
-            <h3 id="modalTitle"></h3>
+            <h3 id="modalTitle" class="text-gradient"></h3>
             <p id="modalMessage"></p>
             <button id="modalCloseButton" class="modal-button">OK</button>
         </div>
@@ -1968,12 +2053,16 @@
             function showModal(title, message) {
                 modalTitle.textContent = title;
                 modalMessage.textContent = message;
+                // Apply the text-gradient class to the modal title
+                modalTitle.classList.add('text-gradient');
                 messageModal.style.display = 'flex'; // Use flex to center content
             }
 
             // Function to hide custom modal
             function hideModal() {
                 messageModal.style.display = 'none';
+                // Remove the text-gradient class when modal is hidden to reset
+                modalTitle.classList.remove('text-gradient');
             }
 
             // Event listener for modal close button
@@ -2064,45 +2153,60 @@
                 });
             };
 
-            // Event Listeners for main navigation
+            // Event Listeners for main navigation (updated for smooth scroll)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // Hide all pages first
+                        homePage.classList.add('hidden');
+                        plansPage.classList.add('hidden');
+                        netflixPlansPage.classList.add('hidden');
+                        amazonPrimePlansPage.classList.add('hidden');
+                        jioHotstarPlansPage.classList.add('hidden');
+                        zee5PlansPage.classList.add('hidden');
+                        sonylivPlansPage.classList.add('hidden');
+                        youtubePremiumPlansPage.classList.add('hidden');
+                        aiSoftwareToolsPage.classList.add('hidden');
+                        spotifyPremiumPlansPage.classList.add('hidden');
+                        canvaProEduPlansPage.classList.add('hidden');
+                        aboutUsPage.classList.add('hidden');
+                        comboDealsPage.classList.add('hidden');
+                        contactPage.classList.add('hidden');
+                        paymentPage.classList.add('hidden');
+
+                        // Show the target page
+                        targetElement.classList.remove('hidden');
+                        mobileMenu.classList.add('hidden'); // Hide mobile menu when navigating
+
+                        // Scroll to the target element
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
             if (viewPlansButton) {
                 viewPlansButton.addEventListener('click', () => showPage(plansPage));
             }
             if (backToHomeButton) {
                 backToHomeButton.addEventListener('click', () => showPage(homePage));
             }
-            if (plansNavLink) {
-                plansNavLink.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    showPage(plansPage);
-                });
-            }
-            if (homeNavLink) {
-                homeNavLink.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    showPage(homePage);
-                });
-            }
-             if (homeLinkHeader) {
+            // Removed direct event listeners for plansNavLink and homeNavLink as they are covered by generic smooth scroll
+
+            if (homeLinkHeader) {
                 homeLinkHeader.addEventListener('click', (event) => {
                     event.preventDefault();
                     showPage(homePage);
                 });
             }
 
-            // Event Listeners for mobile navigation links
-            if (homeNavLinkMobile) {
-                homeNavLinkMobile.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    showPage(homePage);
-                });
-            }
-            if (plansNavLinkMobile) {
-                plansNavLinkMobile.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    showPage(plansPage);
-                });
-            }
+            // Event Listeners for mobile navigation links (covered by generic smooth scroll now)
+            // Removed direct event listeners for homeNavLinkMobile and plansNavLinkMobile
 
             // Mobile menu toggle
             if (mobileMenuButton) {
@@ -2165,13 +2269,8 @@
                 backToPlansFromComboDealsButton.addEventListener('click', () => showPage(plansPage));
             }
 
-            // Event Listeners for About Us navigation
-            if (aboutUsNavLink) {
-                aboutUsNavLink.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    showPage(aboutUsPage);
-                });
-            }
+            // Event Listeners for About Us navigation (covered by generic smooth scroll now)
+            // Removed direct event listener for aboutUsNavLink
             if (backToPlansFromAboutUsButton) {
                 backToPlansFromAboutUsButton.addEventListener('click', () => showPage(plansPage));
             }
@@ -2226,3 +2325,4 @@
     </script>
 </body>
 </html>
+�
